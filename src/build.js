@@ -26,9 +26,7 @@ const buildTask = async () => {
   mkdirp.sync("./dist");
 
   // Render all the pages
-  const pages = [
-    "index.html"
-  ];
+  const pages = ["index.html"];
   pages.forEach(page => {
     const fileContents = fs.readFileSync(`./src/${page}`, "utf8").toString();
     const renderedPage = Mustache.render(fileContents, mustacheData);
